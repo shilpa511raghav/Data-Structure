@@ -131,6 +131,7 @@ public class MajorityElement {
     public static int mooreMajorityElement(int ar[]) {
         int val = ar[0];
         int count = 1;
+        //Step 1 : find valid candidate for majority
         for (int i = 1; i < ar.length; i++) {
             if (ar[i] == val) {
                 count++;
@@ -142,19 +143,22 @@ public class MajorityElement {
                 count = 1;
             }
         }
+        //Step 2 : check if valid candidate is really in majority
         int actualCount = 0;
         for (int j = 0; j < ar.length; j++) {
             if (ar[j] == val) {
                 actualCount++;
             }
         }
+        //Step 3: if majority element exists then return
+
         if (actualCount > ar.length / 2) {
             return val;
         }
-        return 0;
+        return -1;
     }
 
-
+    //Moore's voting algorithm concised
     public static int majoEleem(int[] ar) {
         int count = 0;
         Integer candidate = null;
@@ -167,89 +171,5 @@ public class MajorityElement {
         }
         return candidate;
     }
-
-
-    public static int majEl(int[] ar) {
-        int count = 0;
-        int maj = 0;
-
-        for (int i = 0; i < ar.length; i++) {
-            for (int j = 0; j < ar.length; j++) {
-                if (ar[i] == ar[j]) {
-                    count++;
-                }
-                if (count > ar.length / 2) {
-                    maj = ar[i];
-                }
-            }
-        }
-        return maj;
-    }
-
-
-    public static int melo(int[] ar) {
-        Map<Integer, Integer> countmap = new HashMap<Integer, Integer>();
-        for (int each : ar) {
-            if (countmap.containsKey(each)) {
-                countmap.put(each, countmap.get(each) + 1);
-            } else {
-                countmap.put(each, 1);
-            }
-        }
-        Map.Entry<Integer, Integer> maje = null;
-        for (Map.Entry<Integer, Integer> eachentry : countmap.entrySet()) {
-            if (maje == null || eachentry.getValue() == maje.getValue()) {
-                maje = eachentry;
-            }
-        }
-        return maje.getKey();
-    }
-
-
-    public static int mte(int ar[]) {
-        int candidate = ar[0];
-        int count = 1;
-
-        for (int i = 1; i < ar.length; i++) {
-            if (candidate == ar[i]) {
-                count++;
-            } else {
-                count--;
-            }
-
-            if (count == 0) {
-                candidate = ar[i];
-            }
-        }
-
-        int ac = 0;
-        for (int each : ar) {
-            if (each == candidate) {
-                ac++;
-            }
-        }
-        if (ac > ar.length / 2) {
-            return candidate;
-        }
-        return -1;
-    }
-
-
-    public static int majoEl(int ar[]) {
-        int candidate = 0;
-        int count = 0;
-
-        for (int each : ar) {
-
-            if (count == 0) {
-                candidate = each;
-            }
-            count += candidate == each ? +1 : -1;
-        }
-
-        return candidate;
-    }
-
-
 }
 
