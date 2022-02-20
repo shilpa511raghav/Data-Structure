@@ -2,9 +2,9 @@ public class ReverseLinkedList {
     static Node head;
 
     public static void main(String[] args) {
-        head = new Node(3,new Node(5,new Node(7,null)));
-
-        Node newHead = reverseLinkList(head);
+        head = new Node(3,new Node(5,new Node(7,new Node (12,new Node (31,null)))));
+        Node newHead = reverseRecursion(head);
+        //Node newHead = reverseLinkList(head);
         printLL(newHead);
     }
 
@@ -39,5 +39,18 @@ public class ReverseLinkedList {
         }
         return prev;
     }
+
+
+    public static Node reverseRecursion(Node head){
+        if(head == null || head.next == null){
+            return head;
+        }
+        Node newHead = reverseRecursion(head.next);
+        head.next.next = head;
+        head.next = null;
+        return newHead;
+    }
+
+
 
 }
