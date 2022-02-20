@@ -20,7 +20,7 @@ public class ClimbingStairs {
         return dp[n];
     }
 
-    //Fibonacci way for climb stairs count
+    //Fibonacci way for climb stairs
     public static int climbingStrSpace(int n) {
         if (n == 1) {
             return 1;
@@ -36,22 +36,7 @@ public class ClimbingStairs {
     }
 
 
-
     public static int climb(int n){
-        int oneStep = 1;
-        int twoStep = 1;
-
-        for(int i=2;i<=n;i++){
-            int tmp = twoStep;
-            twoStep+=oneStep;
-            oneStep = tmp;
-        }
-        return twoStep;
-    }
-
-
-
-    public static int clmb(int n){
         if(n==1){
             return 1;
         }
