@@ -3,8 +3,10 @@ public class ReverseLinkedList {
 
     public static void main(String[] args) {
         head = new Node(3,new Node(5,new Node(7,new Node (12,new Node (31,null)))));
-        Node newHead = reverseRecursion(head);
-        //Node newHead = reverseLinkList(head);
+        //head = new Node(3,new Node(5,new Node(7,new Node (12,new Node (31,new Node(10,null))))));
+        //Node newHead = reverseRecursion(head);
+        Node newHead = reverseLinkList(head);
+        //Node newHead = revLL(head);
         printLL(newHead);
     }
 
@@ -29,10 +31,9 @@ public class ReverseLinkedList {
 
     public static Node reverseLinkList(Node head){
         Node prev = null;
-        Node temp = null;
         Node cur = head;
         while(cur != null){
-            temp = cur.next;
+            Node temp = cur.next;
             cur.next = prev;
             prev = cur;
             cur = temp;
@@ -51,6 +52,15 @@ public class ReverseLinkedList {
         return newHead;
     }
 
-
-
+    //insted of taking current  pointer head moved as head will became last node after reversal
+    public static Node revLL(Node head){
+        Node prev = null;
+        while(head != null){
+          Node  temp = head.next;
+            head.next = prev;
+            prev = head;
+            head = temp;
+        }
+        return prev;
+    }
 }
