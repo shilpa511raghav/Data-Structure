@@ -33,6 +33,23 @@ public class MiddleOfLinkedList {
         return curPtr;
     }
 
+
+    //Slow fast pointer approach for middle O(n) space and O(1) time complexity
+    public static Node middleOptimal(Node head){
+        Node slow = head;
+        Node fast = head;
+
+        if(head == null){
+            return head;
+        }
+
+        while (fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
     static class Node {
         int data;
         Node next;
