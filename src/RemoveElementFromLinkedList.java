@@ -1,9 +1,9 @@
 public class RemoveElementFromLinkedList {
     public static void main(String[] args) {
-        //ListNode head = new ListNode(1,new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(2, new ListNode(5,null))))));
+        ListNode head = new ListNode(1,new ListNode(2, new ListNode(3, new ListNode(1, new ListNode(2, new ListNode(5,null))))));
         //ListNode head = new ListNode(2,new ListNode(2, new ListNode(2, new ListNode(2, new ListNode(2, new ListNode(2,null))))));
-        ListNode head = new ListNode(2,null);
-        ListNode outputListNode = removeElementFromLL(head,2);
+        //ListNode head = new ListNode(2,null);
+        ListNode outputListNode = removeElementFromLL(head,1);
         //System.out.println(outputListNode);
         printLinkList(outputListNode);
     }
@@ -62,15 +62,31 @@ public class RemoveElementFromLinkedList {
         ListNode dummy = new ListNode(-748485,null);
         ListNode prev = dummy;
         while(cur != null){
-            //ListNode nxt = cur.next;
+            ListNode nxt = cur.next;
             if(cur.data == val){
+                prev.next = nxt;
+            }else{
+                prev = cur;
+            }
+            cur = nxt;
+        }
+
+        return dummy.next;
+    }
+
+
+    public static ListNode rmNode(ListNode head, int val){
+        ListNode cur = head;
+        ListNode dummy = new ListNode(-34354,null);
+        ListNode prev = dummy;
+        while(cur != null){
+            if(cur.data == val ){
                 prev.next = cur.next;
             }else{
                 prev = cur;
             }
             cur = cur.next;
         }
-
         return dummy.next;
     }
 

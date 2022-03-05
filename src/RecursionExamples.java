@@ -4,11 +4,11 @@ public class RecursionExamples {
         //printDecreasing(5);
         //printIncreasing(10);
         //printDecreasingIncreasing(5);
-       /* int fact = factorial(5);
-        System.out.println(fact);*/
+       int fact = factorial(5);
+        System.out.println(fact);
 
-        int po = powerOfn(3, 4);
-        System.out.println(po);
+        /*int po = powerOfn(3, 4);
+        System.out.println(po);*/
     }
 
     public static void printDecreasing(int n) {
@@ -23,7 +23,7 @@ public class RecursionExamples {
         if (n == 0) {
             return;
         }
-        printIncreasing(n - 1);   // when a call goes stack got full everytime function invoked
+        printIncreasing(n - 1);   // when a call goes stack fill one by one everytime function invoked
         System.out.println(n);
     }
 
