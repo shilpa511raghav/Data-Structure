@@ -47,7 +47,6 @@ public class ValidAnagram {
                             alphabetCount[t.charAt(j)-'a'] = alphabetCount[s.charAt(j)-'a']-1;
                         }*/
 
-
         //check simultaneously in both strings one by one character if length is same as length we have checked allready above so it will be same only then will come to this loop
         for (int i = 0; i < s.length(); i++) {
             //add in alphabtical position for first index of first string
