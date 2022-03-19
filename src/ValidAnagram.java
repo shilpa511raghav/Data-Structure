@@ -4,7 +4,7 @@ public class ValidAnagram {
 
     public static void main(String[] args) {
         //validAnagramApproachSecond("abtzab", "abtzab");
-        isAnagram("abtzab", "abtzab");
+        System.out.println(isAnagram("abtzab", "abtzab"));
     }
 
     //Approach 1 using HashMap
@@ -73,7 +73,7 @@ public class ValidAnagram {
 
         for(int i=0;i<s.length();i++){
             counts[s.charAt(i) - 'a']+=1;
-            counts[s.charAt(i) - 'a']-=1;
+            counts[t.charAt(i) - 'a']-=1;
 
         }
         for(int each: counts){
