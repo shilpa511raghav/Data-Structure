@@ -3,10 +3,10 @@ import java.util.Map;
 
 public class LongestSubStringWithAllUniqueCharacters {
     public static void main(String[] args) {
-        System.out.println(LongestSubstringAllUniqueChars("abcabcbb"));
+        System.out.println(LengthOfLongestSubstringAllUniqueChars("abcabcbb"));
     }
 
-    public static int LongestSubstringAllUniqueChars(String s) {
+    public static int LengthOfLongestSubstringAllUniqueChars(String s) {
         int i = 0, j = 0;
         int max = Integer.MIN_VALUE;
         Map<Character, Integer> map = new HashMap<Character, Integer>();
