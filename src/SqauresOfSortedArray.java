@@ -2,9 +2,10 @@ import java.util.Arrays;
 
 public class SqauresOfSortedArray {
     public static void main(String[] args) {
-        squaresOfSortedArray(new int[]{-4,-1,0,3,10});
-    }
 
+        int[] output = squaresOfSortedArray(new int[]{-4,-1,0,3,10});
+        System.out.println(output);
+    }
 
     //In place and  time complexity = nlogn as arrays.sort take nlogn
     //Space complexity = O(N) as no new space used
