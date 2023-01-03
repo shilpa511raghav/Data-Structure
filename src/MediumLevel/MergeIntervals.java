@@ -8,6 +8,7 @@ public class MergeIntervals {
     public static void main(String[] args) {
         int[][] output = mergeIntervals(new int[][]{{22, 28}, {1, 8}, {25, 27}, {17, 19}, {27, 30}, {5, 12}});
         System.out.println(Arrays.deepToString(output));
+
     }
 
     // create empty list of integer array as response array
