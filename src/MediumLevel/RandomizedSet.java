@@ -27,8 +27,8 @@ public class RandomizedSet {
         return true;
 
     }
-    public boolean remove(int val){
+    /*public boolean remove(int val){
         if(!map.containsKey(val)) return false;
         
-    }
+    }*/
 }
