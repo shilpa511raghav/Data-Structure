@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PascalTriangle {
+    //Steps: store prevRow and use it for next row calculation and accumulate each row in output for result
+    //pascal traingle : elements in a row is equal to row only and first and last element of each row is 1 always and other middle elements are sum of prev and next of each index
     public static void main(String[] args) {
         List<List<Integer>> res = pascalTriangle(7);
         System.out.println(res);
